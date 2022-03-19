@@ -1,0 +1,17 @@
+name: buildProject
+
+on:
+  project:
+    created:
+  workflow_dispatch: {}
+
+jobs:
+  configuration:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Create or Update Project Card
+        uses: peter-evans/create-or-update-project-card@v1
+        with:
+          project-name: POC
+          column-name: ToDo
+          issue-number: 1
